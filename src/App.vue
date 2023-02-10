@@ -1,6 +1,6 @@
 <template>
 
-    <div class="container">
+    <div class="box container-fuild">
       <search></search>
       <list></list>
     </div>
@@ -21,5 +21,7 @@ export default {
 </script>
 
 <style>
-
+.box{
+  background-color:#e08bc0;
+}
 </style>

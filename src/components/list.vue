@@ -1,11 +1,17 @@
 <template>
-  <div class="box row">
-    <div v-show="info.users.length" class="card" v-for="user in info.users" :key="user.login">
-      <a :href="user.html_url" target="_blank">
-        <img :src="user.avatar_url" style="width:100px"/>
-      </a>
-      <p class="card-text">{{ user.login }}</p>
-    </div>
+  <div class=" row">
+    <transition-group 
+            name="animate__animated animate__bounce" 
+            enter-active-class="animate__bounceInDown"
+            leave-active-class="animate__backOutDown"
+            appear>
+      <div v-show="info.users.length" class="card" v-for="user in info.users" :key="user.login">
+        <a :href="user.html_url" target="_blank">
+          <img :src="user.avatar_url" style="width:100px"/>
+        </a>
+        <p class="card-text">{{ user.login }}</p>
+      </div>
+    </transition-group>
     <h1 v-show="info.isfirst">你好，這邊是顯示區</h1>
     <h1 v-show="info.isload">更新頁面中。。。。。。</h1>
     <h1 v-show="info.errormsg">{{ info.errormsg }}</h1>
@@ -13,6 +19,7 @@
 </template>
 
 <script>
+import 'animate.css'
 export default {
   name: 'list',
   data(){
@@ -46,9 +53,9 @@ export default {
 
 .card{
   float:left;
-  width: 33.333%;
+  width: 30%;
   padding: .75rem;
-  margin-bottom: 2rem;
+  margin: 1rem;
   border: 1px solid #efefef;
   text-align: center;
 }

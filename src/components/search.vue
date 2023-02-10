@@ -38,3 +38,11 @@
 </script>
 
 
+<style>
+
+.junmbotron{
+  padding: 20px 50px;
+}
+
+
+</style>
